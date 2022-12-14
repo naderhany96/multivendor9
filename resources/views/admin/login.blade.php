@@ -37,13 +37,25 @@
                 Error : {{ Session::get('error_msg') }}
               </div>
               @endif
+
+
+              @if ($errors->any())
+              <div class="alert alert-danger">
+                <ul>
+                  @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+              @endif
+
               <form class="pt-3" method="post" action="{{ url('admin/login') }}">
                 @csrf
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" name="email" id="exampleInputEmail1" placeholder="Username">
+                  <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="email" required="required">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control form-control-lg" name="password" id="exampleInputPassword1" placeholder="Password" required>
                 </div>
                 <div class="mt-3">
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">Sign in</button>

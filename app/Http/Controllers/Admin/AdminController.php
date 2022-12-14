@@ -15,6 +15,12 @@ class AdminController extends Controller
     public function login(Request $request)
     {
         if ($request->isMethod('post')) {
+
+            $request->validate([
+                'email' => 'required|email|max:255',
+                'password' => 'required'
+            ]);
+
             if (auth()->guard('admin')->attempt([
                 'email' => $request->email,
                 'password' => $request->password,
@@ -22,7 +28,7 @@ class AdminController extends Controller
             ])) {
                 return redirect('admin/dashboard');
             } else {
-                return redirect()->back()->with(['error_msg' => 'Invalid Creds']);
+                return redirect()->back()->with(['error_msg' => 'Invalid Email or password']);
             }
         }
         return view('admin.login');
