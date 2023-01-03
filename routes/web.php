@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,12 +30,3 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::prefix('admin')->group(function () {
-    Route::match(['get', 'post'], 'login', [AdminController::class, 'login']);
-
-    Route::group(['middleware' => 'admin'], function () {
-
-        Route::get('dashboard', [AdminController::class, 'dashboard']);
-        Route::get('logout', [AdminController::class, 'login']);
-    });
-});
