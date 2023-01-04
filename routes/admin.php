@@ -12,11 +12,14 @@ Route::prefix('admin')->group(function () {
         Route::controller(AdminController::class)->group(function () {
           
             Route::get('dashboard',  'dashboard');
+
             Route::get('logout',  'logout');
     
             Route::match(['get', 'post'], 'update-password',  'updatePassword');
 
             Route::match(['get', 'post'], 'check-password',  'checkPassword');
+
+            Route::match(['get', 'post'], 'update-details',  'updateDetails');
         });
    
     });

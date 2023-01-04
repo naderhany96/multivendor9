@@ -16,7 +16,6 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-password') }}">Update password</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-details') }}">Update details</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
           </li>

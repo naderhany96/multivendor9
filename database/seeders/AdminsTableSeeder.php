@@ -24,7 +24,7 @@ class AdminsTableSeeder extends Seeder
                 'mobile' => '+9656546654',
                 'email' => 'superadmin@multiv.com',
                 'password' => bcrypt('11111111'),
-                'image' => '',
+                'image' => 'default_user.png',
                 'status' => 1
             ]
         ];

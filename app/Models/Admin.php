@@ -10,4 +10,9 @@ class Admin extends   Authenticatable
     use  HasFactory;
     protected $guard = 'admin';
     protected $guarded = [];
+
+    public function getImagePathAttribute(){
+
+        return asset('admin/images/profiles/'. $this->image);
+    }
 }
